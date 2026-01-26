@@ -6,7 +6,14 @@
 }
 
 body {
-    @apply bg-black text-white text-sm font-poppins antialiased;
+    @apply bg-black text-white text-sm font-poppins antialiased pt-[80px];
+}
+
+/* Mobile padding adjustment for navbar */
+@media (max-width: 1024px) {
+    body {
+        @apply pt-[70px];
+    }
 }
 
 button {

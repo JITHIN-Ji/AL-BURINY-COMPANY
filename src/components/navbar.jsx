@@ -7,7 +7,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const NAVBAR_HEIGHT = 80; // adjust if needed
+  // Adjust navbar height based on screen size
+  const NAVBAR_HEIGHT = window.innerWidth >= 640 ? 80 : 70;
 
   const handleNavClick = (sectionId) => {
     // Update route
@@ -55,14 +56,14 @@ export default function Navbar() {
                    bg-gradient-to-r from-red-600/95 via-orange-600/95 to-yellow-500/95
                    backdrop-blur-[15px] shadow-lg shadow-red-600/40"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between h-[70px] sm:h-[80px]">
           <div className="flex items-center gap-2 sm:gap-4">
             <img
-              className="h-10 sm:h-14 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]"
+              className="h-8 sm:h-14 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]"
               src="/logo.png"
               alt="AL BURINY Logo"
             />
-            <span className="text-white text-xs sm:text-xl font-bold tracking-widest">
+            <span className="text-white text-[10px] sm:text-xl font-bold tracking-widest">
               AL BURINY
             </span>
           </div>

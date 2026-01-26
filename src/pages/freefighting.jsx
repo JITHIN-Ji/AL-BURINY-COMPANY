@@ -4,7 +4,7 @@ const FireFightingEquipment = () => {
   return (
     <div style={{ minHeight: "100vh", background: "#f5f5f5" }}>
       {/* Hero Section */}
-      <section style={{ background: "#fff", padding: "3rem 2rem", marginTop: "80px" }}>
+      <section style={{ background: "#fff", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem", alignItems: "center" }}>
             {/* Left Content */}
