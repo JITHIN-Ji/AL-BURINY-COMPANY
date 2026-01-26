@@ -42,7 +42,10 @@ section#home {
 }
 
 /* Other sections get top padding to account for navbar */
-section:not(#home) {
+/* Exclude sections that already have their own padding (py-24 or inline padding) */
+/* #home, #about, #products, #certifications, and #contact all have their own padding */
+/* This rule is kept for any future sections that might need navbar offset */
+section:not(#home):not(#products):not(#about):not(#certifications):not(#contact) {
     @apply pt-[70px] sm:pt-[80px];
 }
 
