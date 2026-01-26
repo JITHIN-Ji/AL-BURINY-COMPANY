@@ -6,7 +6,7 @@ const EmergencyLightingSystems = () => {
       {/* Hero Section */}
       <section style={{ background: "#fff", padding: "3rem 2rem", marginTop: "80px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem", alignItems: "center" }}>
             {/* Left Image */}
             <div style={{ 
               borderRadius: "12px",
@@ -17,7 +17,7 @@ const EmergencyLightingSystems = () => {
               <img 
                 src="/picture2.png"
                 alt="Emergency Lighting Systems"
-                style={{ width: "100%", height: "400px", objectFit: "cover", display: "block" }}
+                style={{ width: "100%", height: "auto", maxHeight: "400px", objectFit: "cover", display: "block" }}
               />
             </div>
 

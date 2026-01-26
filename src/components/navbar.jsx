@@ -57,12 +57,12 @@ export default function Navbar() {
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
             >
-                <div className="max-w-7xl mx-auto px-8 py-4 flex items-center justify-between w-full">
-                    <div className="flex items-center gap-4">
-                        <img className="h-14 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-110 hover:rotate-12 transition-transform duration-300" 
+                <div className="max-w-7xl mx-auto px-4 sm:px-8 py-4 flex items-center justify-between w-full">
+                    <div className="flex items-center gap-2 sm:gap-4">
+                        <img className="h-10 sm:h-14 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] hover:scale-110 hover:rotate-12 transition-transform duration-300" 
                              src="/logo.png" 
                              alt="AL BURINY Logo" />
-                        <span className="text-white text-xl font-bold tracking-widest hidden sm:block">AL BURINY</span>
+                        <span className="text-white text-xs sm:text-xl font-bold tracking-widest">AL BURINY</span>
                     </div>
 
                     <div className="hidden lg:flex items-center gap-10 ml-auto">
@@ -73,7 +73,7 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    <button onClick={() => setIsMenuOpen(true)} className="lg:hidden active:scale-90 transition ml-auto">
+                    <button onClick={() => setIsMenuOpen(true)} className="lg:hidden active:scale-90 transition ml-auto p-2">
                         <MenuIcon className="size-6 text-white" />
                     </button>
                 </div>
