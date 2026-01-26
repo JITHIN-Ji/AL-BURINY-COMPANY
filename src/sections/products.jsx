@@ -106,7 +106,7 @@ const Products = () => {
               },
               {
                 title: "Emergency Lighting Systems",
-                img: "https://www.firexuae.com/files/products/emergency_light_system/6.jpg",
+                img: "/picture4.png",
                 desc:
                   "Reliable emergency lighting solutions to ensure safe evacuation during power failures or emergencies.",
                 list: [
