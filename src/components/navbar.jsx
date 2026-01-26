@@ -73,9 +73,12 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    <button onClick={() => setIsMenuOpen(true)} className="lg:hidden active:scale-90 transition ml-auto p-2">
-                        <MenuIcon className="size-6 text-white" />
-                    </button>
+                    <button 
+  onClick={() => setIsMenuOpen(true)} 
+  className="lg:hidden active:scale-90 transition ml-auto p-2 bg-white rounded-lg hover:bg-gray-100 shadow-lg"
+>
+  <MenuIcon className="size-7 text-red-600 stroke-[3]" />
+</button>
                 </div>
             </motion.nav>
             <div className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 lg:hidden transition-all duration-400 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
