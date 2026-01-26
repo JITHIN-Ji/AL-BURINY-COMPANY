@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const FireAlarmSystems = () => {
+  const [imageScale, setImageScale] = useState(1);
+
+  const handleImageMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    setImageScale(1.1);
+  };
+
+  const handleImageMouseLeave = () => {
+    setImageScale(1);
+  };
+
   return (
     <div style={{ minHeight: "100vh", background: "#f5f5f5" }}>
       {/* Hero Section */}
@@ -76,11 +89,21 @@ const FireAlarmSystems = () => {
               overflow: "hidden",
               boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
               border: "2px solid #ff6b00"
-            }}>
+            }}
+            onMouseMove={handleImageMouseMove}
+            onMouseLeave={handleImageMouseLeave}>
               <img 
                 src="/picture1.png"
                 alt="Fire Alarm Systems"
-                style={{ width: "100%", height: "auto", maxHeight: "400px", objectFit: "cover", display: "block" }}
+                style={{ 
+                  width: "100%", 
+                  height: "auto", 
+                  maxHeight: "400px", 
+                  objectFit: "cover", 
+                  display: "block",
+                  transform: `scale(${imageScale})`,
+                  transition: "transform 0.3s ease"
+                }}
               />
             </div>
           </div>

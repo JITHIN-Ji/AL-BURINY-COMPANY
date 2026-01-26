@@ -7,12 +7,28 @@
 
 html {
     overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
+    /* Prevent mobile browser address bar from causing layout shifts */
+    height: 100%;
+    height: -webkit-fill-available;
 }
 
 body {
     @apply bg-black text-white text-sm font-poppins antialiased;
     margin: 0;
     padding: 0;
+    /* Prevent mobile browser address bar from causing layout shifts */
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    /* Prevent pull-to-refresh on mobile */
+    overscroll-behavior-y: contain;
+}
+
+/* Fix for mobile navbar jumping */
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari */
+    body {
+        min-height: -webkit-fill-available;
+    }
 }
 
 /* Ensure sections have proper top padding for fixed navbar */
@@ -32,4 +48,49 @@ section:not(#home) {
 
 button {
     @apply cursor-pointer;
+}
+
+/* Prevent navbar from jumping on mobile scroll */
+nav {
+    /* Ensure navbar stays fixed on mobile - use GPU acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* Prevent layout shifts */
+    contain: layout style paint;
+}
+
+/* Ensure navbar container has proper flex alignment */
+nav > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Prevent mobile address bar from affecting layout */
+@media (max-width: 768px) {
+    html {
+        /* Use fixed height to prevent address bar issues */
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    body {
+        /* Prevent body from shifting when address bar shows/hides */
+        position: relative;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+    
+    nav {
+        /* Ensure navbar is always at top on mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        max-width: 100vw;
+    }
 }
