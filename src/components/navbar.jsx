@@ -23,16 +23,26 @@ export default function Navbar() {
       const element = document.getElementById(sectionId);
       if (!element) return;
 
-      const y =
-        element.getBoundingClientRect().top +
-        window.pageYOffset -
-        NAVBAR_HEIGHT;
+      // Get the navbar height dynamically
+      const navbarHeight = window.innerWidth >= 640 ? 80 : 70;
+      
+      // Get element position relative to document
+      const elementRect = element.getBoundingClientRect();
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      
+      // Calculate target scroll position with navbar offset
+      let targetScroll = elementRect.top + scrollTop - navbarHeight;
+      
+      // For the home section, scroll to the very top
+      if (sectionId === "home") {
+        targetScroll = 0;
+      }
 
       window.scrollTo({
-        top: y,
+        top: Math.max(0, targetScroll),
         behavior: "smooth",
       });
-    }, 120);
+    }, 50);
 
     setIsMenuOpen(false);
   };

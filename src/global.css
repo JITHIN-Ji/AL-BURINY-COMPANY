@@ -10,16 +10,24 @@ html {
 }
 
 body {
-    @apply bg-black text-white text-sm font-poppins antialiased pt-[80px];
+    @apply bg-black text-white text-sm font-poppins antialiased;
     margin: 0;
     padding: 0;
 }
 
-/* Mobile padding adjustment for navbar */
-@media (max-width: 1024px) {
-    body {
-        @apply pt-[70px];
-    }
+/* Ensure sections have proper top padding for fixed navbar */
+section {
+    @apply relative;
+}
+
+/* Don't add padding to hero section since it uses h-screen */
+section#home {
+    /* no padding - full viewport height */
+}
+
+/* Other sections get top padding to account for navbar */
+section:not(#home) {
+    @apply pt-[70px] sm:pt-[80px];
 }
 
 button {
