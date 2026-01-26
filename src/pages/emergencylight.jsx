@@ -7,21 +7,7 @@ const EmergencyLightingSystems = () => {
       <section style={{ background: "#fff", padding: "8rem 2rem 3rem 2rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem", alignItems: "center" }}>
-            {/* Left Image */}
-            <div style={{ 
-              borderRadius: "12px",
-              overflow: "hidden",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-              border: "2px solid #ff6b00"
-            }}>
-              <img 
-                src="/picture2.png"
-                alt="Emergency Lighting Systems"
-                style={{ width: "100%", height: "auto", maxHeight: "400px", objectFit: "cover", display: "block" }}
-              />
-            </div>
-
-            {/* Right Content */}
+            {/* Left Content */}
             <div>
               <h1 style={{ 
                 fontSize: "2.8rem", 
@@ -61,6 +47,20 @@ const EmergencyLightingSystems = () => {
               >
                 📥 Download Catalogue
               </a>
+            </div>
+
+            {/* Right Image */}
+            <div style={{ 
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+              border: "2px solid #ff6b00"
+            }}>
+              <img 
+                src="/picture2.png"
+                alt="Emergency Lighting Systems"
+                style={{ width: "100%", height: "auto", maxHeight: "400px", objectFit: "cover", display: "block" }}
+              />
             </div>
           </div>
         </div>
