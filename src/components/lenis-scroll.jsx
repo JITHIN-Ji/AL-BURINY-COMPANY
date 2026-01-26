@@ -2,37 +2,51 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Lenis from "lenis";
 
-let lenis = null;
+let lenisInstance = null;
 
 export default function LenisScroll() {
-    const location = useLocation();
+  const location = useLocation();
 
-    useEffect(() => {
-        if (!lenis) {
-            lenis = new Lenis({
-                duration: 1.2,
-                smoothWheel: true,
-                smoothTouch: false,
-                anchors: true,
-            });
+  useEffect(() => {
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || "ontouchstart" in window);
 
-            const raf = (time) => {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            };
+    
+    if (isMobile) {
+      // Ensure native scroll starts from top on route change
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
 
-            requestAnimationFrame(raf);
-        }
+    // ✅ Create Lenis only once
+    if (!lenisInstance) {
+      lenisInstance = new Lenis({
+        duration: 1.1,
+        easing: (t) => 1 - Math.pow(1 - t, 4),
+        smoothWheel: true,
+        smoothTouch: false,
+        normalizeWheel: true,
+      });
 
-        // Reset Lenis when route changes
-        if (lenis) {
-            lenis.scrollTo(0, { duration: 0 });
-        }
+      const raf = (time) => {
+        lenisInstance.raf(time);
+        requestAnimationFrame(raf);
+      };
 
-        return () => {
-            // Keep lenis instance alive for all routes
-        };
-    }, [location.pathname]);
+      requestAnimationFrame(raf);
+    }
 
-    return null;
+    // ✅ Reset scroll on route change (desktop only)
+    lenisInstance.scrollTo(0, {
+      immediate: true,
+      force: true,
+    });
+
+    return () => {
+      
+    };
+  }, [location.pathname]);
+
+  return null;
 }
