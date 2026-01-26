@@ -31,7 +31,7 @@ export default function AboutOurApps() {
           <motion.div
             initial={{ x: -60, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h3 className="text-[2.3rem] font-bold text-red-600 mb-7">
@@ -69,7 +69,7 @@ export default function AboutOurApps() {
           <motion.div
             initial={{ x: 60, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex justify-center"
           >
