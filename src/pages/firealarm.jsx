@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const FireAlarmSystems = () => {
   const [imageScale, setImageScale] = useState(1);
   const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleImageMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -39,42 +48,42 @@ const FireAlarmSystems = () => {
     {
       title: "Addressable Fire Alarm Control Panels",
       description: "Advanced intelligent panels with addressable detection capabilities, providing precise fire location identification and comprehensive system control with graphical user interface and network connectivity options.",
-      image: "/control-panel.png"
+      image: "/firealarm1.png"
     },
     {
       title: "Conventional Fire Alarm Systems",
       description: "Reliable and cost-effective conventional systems ideal for smaller installations, offering zone-based detection with simple configuration and maintenance for residential and small commercial buildings.",
-      image: "/conventional-system.png"
+      image: "/firealarm2.png"
     },
     {
       title: "Intelligent Smoke and Heat Detectors",
       description: "Multi-sensor detectors with advanced algorithms for accurate fire detection, reducing false alarms while providing early warning through optical, ionization, and thermal sensing technologies.",
-      image: "/smoke-detector.png"
+      image: "/firealarm3.png"
     },
     {
       title: "Manual Call Points",
       description: "Break glass manual call points strategically positioned for manual fire alarm activation, featuring weatherproof enclosures and tamper-resistant designs with easy reset functionality.",
-      image: "/manual-call-point.png"
+      image: "/firealarm4.png"
     },
     {
       title: "Fire Alarm Sounders and Visual Indicators",
       description: "High-output audio-visual devices including sirens, bells, and strobe lights ensuring clear emergency notifications compliant with accessibility standards for hearing and visually impaired individuals.",
-      image: "/sounder-beacon.png"
+      image: "/firealarm5.png"
     },
     {
       title: "Zone Monitoring Modules",
       description: "Interface modules for integrating conventional devices with addressable systems, providing input/output control for auxiliary equipment and seamless communication between system components.",
-      image: "/monitoring-module.png"
+      image: "/firealarm6.png"
     },
     {
       title: "Building Management Integration",
       description: "Seamless integration capabilities with BMS platforms enabling centralized monitoring, automated HVAC control during fire events, and comprehensive facility management through unified interfaces.",
-      image: "/bms-integration.png"
+      image: "/firealarm8.png"
     },
     {
       title: "24/7 System Monitoring & Maintenance",
       description: "Round-the-clock remote monitoring services with scheduled preventive maintenance, emergency response support, and comprehensive system health checks ensuring optimal performance and compliance.",
-      image: "/monitoring-service.png"
+      image: "/firealrm7.png"
     }
   ];
 
@@ -187,7 +196,7 @@ const FireAlarmSystems = () => {
                   width: "100%", 
                   height: "auto", 
                   maxHeight: "400px", 
-                  objectFit: "cover", 
+                  objectFit: "contain", 
                   display: "block",
                   transform: `scale(${imageScale})`,
                   transition: "transform 0.3s ease"
@@ -223,7 +232,7 @@ const FireAlarmSystems = () => {
                   boxShadow: hoveredProduct === index ? "0 8px 24px rgba(255, 107, 0, 0.15)" : "0 4px 12px rgba(0,0,0,0.08)",
                   transition: "all 0.3s ease",
                   display: "grid",
-                  gridTemplateColumns: window.innerWidth > 768 ? "250px 1fr" : "1fr",
+                  gridTemplateColumns: isDesktop ? "250px 1fr" : "1fr",
                   gap: "1.5rem",
                   alignItems: "center"
                 }}
@@ -235,7 +244,7 @@ const FireAlarmSystems = () => {
                   borderRadius: "8px",
                   overflow: "hidden",
                   border: "2px solid #f0f0f0",
-                  height: window.innerWidth > 768 ? "200px" : "250px",
+                  height: isDesktop ? "200px" : "250px",
                   width: "100%",
                   display: "flex",
                   alignItems: "center",
@@ -248,9 +257,10 @@ const FireAlarmSystems = () => {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
-                      transform: hoveredProduct === index ? "scale(1.05)" : "scale(1)",
-                      transition: "transform 0.3s ease"
+                      objectFit: "contain",
+                      transform: hoveredProduct === index ? "scale(1.02)" : "scale(1)",
+                      transition: "transform 0.3s ease",
+                      background: "#fff"
                     }}
                     onError={(e) => {
                       e.target.style.display = "none";

@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const FireFightingEquipment = () => {
   const [imageScale, setImageScale] = useState(1);
   const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleImageMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -66,7 +75,7 @@ const FireFightingEquipment = () => {
     {
       title: "Fire Safety Signage",
       description: "Photoluminescent and reflective safety signs compliant with international standards, providing clear emergency exit routes, equipment locations, and safety instructions.",
-      image: "/safety-signage.png"
+      image: "/firefighting8.png"
     }
   ];
 
@@ -205,7 +214,7 @@ const FireFightingEquipment = () => {
                   boxShadow: hoveredProduct === index ? "0 8px 24px rgba(255, 107, 0, 0.15)" : "0 4px 12px rgba(0,0,0,0.08)",
                   transition: "all 0.3s ease",
                   display: "grid",
-                  gridTemplateColumns: window.innerWidth > 768 ? "250px 1fr" : "1fr",
+                  gridTemplateColumns: isDesktop ? "250px 1fr" : "1fr",
                   gap: "1.5rem",
                   alignItems: "center"
                 }}
@@ -217,7 +226,7 @@ const FireFightingEquipment = () => {
                   borderRadius: "8px",
                   overflow: "hidden",
                   border: "2px solid #f0f0f0",
-                  height: window.innerWidth > 768 ? "200px" : "250px",
+                  height: isDesktop ? "200px" : "250px",
                   width: "100%",
                   display: "flex",
                   alignItems: "center",
@@ -230,9 +239,10 @@ const FireFightingEquipment = () => {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
-                      transform: hoveredProduct === index ? "scale(1.05)" : "scale(1)",
-                      transition: "transform 0.3s ease"
+                      objectFit: "contain",
+                      transform: hoveredProduct === index ? "scale(1.02)" : "scale(1)",
+                      transition: "transform 0.3s ease",
+                      background: "#fff"
                     }}
                     onError={(e) => {
                       e.target.style.display = "none";

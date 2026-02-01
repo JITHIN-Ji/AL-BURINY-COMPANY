@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const EmergencyLightingSystems = () => {
   const [imageScale, setImageScale] = useState(1);
   const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleImageMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -31,42 +40,42 @@ const EmergencyLightingSystems = () => {
     {
       title: "LED Emergency Exit Signs",
       description: "High-visibility LED exit signs with energy-efficient technology, featuring long-lasting illumination, low power consumption, and clear directional indicators compliant with international safety codes.",
-      image: "/exit-sign.png"
+      image: "/emergency1.png"
     },
     {
       title: "Emergency Bulkhead Lights",
       description: "Robust bulkhead lighting fixtures designed for corridors and escape routes, providing reliable illumination with impact-resistant housings and extended battery life for safe evacuation.",
-      image: "/bulkhead-light.png"
+      image: "/emergency2.png"
     },
     {
       title: "Self-Contained Emergency Units",
       description: "Independent emergency lighting units with integrated battery backup systems, offering 3-hour minimum duration, automatic activation on power failure, and minimal maintenance requirements.",
-      image: "/self-contained-unit.png"
+      image: "/emergency3.png"
     },
     {
       title: "Central Monitoring Systems",
       description: "Sophisticated centralized emergency lighting control systems for large facilities, enabling real-time monitoring, automated testing, fault detection, and comprehensive reporting capabilities.",
-      image: "/central-monitoring.png"
+      image: "/emergency5.png"
     },
     {
       title: "Maintained & Non-Maintained Lights",
       description: "Versatile emergency lighting options including maintained lights that operate continuously and non-maintained units that activate only during power outages, suitable for various applications.",
-      image: "/maintained-light.png"
+      image: "/emergency6.png"
     },
     {
       title: "Weatherproof Emergency Lighting",
       description: "IP65-rated outdoor emergency lighting solutions with corrosion-resistant materials, sealed enclosures, and weatherproof designs for parking areas, building exteriors, and exposed locations.",
-      image: "/weatherproof-light.png"
+      image: "/emergency4.png"
     },
     {
       title: "Automatic Self-Testing Systems",
       description: "Intelligent emergency lighting with built-in self-testing functionality, performing automated function and duration tests while logging results and alerting maintenance teams to potential issues.",
-      image: "/self-testing-system.png"
+      image: "/emergency7.png"
     },
     {
       title: "Customizable Exit Sign Designs",
       description: "Tailored exit signage with multiple pictogram options, custom text capabilities, and various mounting configurations to meet specific building requirements and comply with local regulations.",
-      image: "/custom-exit-sign.png"
+      image: "/emergency8.png"
     }
   ];
 
@@ -145,7 +154,7 @@ const EmergencyLightingSystems = () => {
                   width: "100%", 
                   height: "auto", 
                   maxHeight: "400px", 
-                  objectFit: "cover", 
+                  objectFit: "contain", 
                   display: "block",
                   transform: `scale(${imageScale})`,
                   transition: "transform 0.3s ease"
@@ -181,7 +190,7 @@ const EmergencyLightingSystems = () => {
                   boxShadow: hoveredProduct === index ? "0 8px 24px rgba(255, 107, 0, 0.15)" : "0 4px 12px rgba(0,0,0,0.08)",
                   transition: "all 0.3s ease",
                   display: "grid",
-                  gridTemplateColumns: window.innerWidth > 768 ? "250px 1fr" : "1fr",
+                  gridTemplateColumns: isDesktop ? "250px 1fr" : "1fr",
                   gap: "1.5rem",
                   alignItems: "center"
                 }}
@@ -193,7 +202,7 @@ const EmergencyLightingSystems = () => {
                   borderRadius: "8px",
                   overflow: "hidden",
                   border: "2px solid #f0f0f0",
-                  height: window.innerWidth > 768 ? "200px" : "250px",
+                  height: isDesktop ? "200px" : "250px",
                   width: "100%",
                   display: "flex",
                   alignItems: "center",
@@ -206,9 +215,10 @@ const EmergencyLightingSystems = () => {
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
-                      transform: hoveredProduct === index ? "scale(1.05)" : "scale(1)",
-                      transition: "transform 0.3s ease"
+                      objectFit: "contain",
+                      transform: hoveredProduct === index ? "scale(1.02)" : "scale(1)",
+                      transition: "transform 0.3s ease",
+                      background: "#fff"
                     }}
                     onError={(e) => {
                       e.target.style.display = "none";
