@@ -93,8 +93,8 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.25 }}
         className="fixed top-0 left-0 right-0 z-50 w-full
-                   bg-gradient-to-r from-red-600/95 via-orange-600/95 to-yellow-500/95
-                   backdrop-blur-[15px] shadow-lg shadow-red-600/40"
+                   bg-amber-50
+                   backdrop-blur-[15px] shadow-lg shadow-amber-100/60"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between h-[70px] sm:h-[80px]">
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
@@ -103,7 +103,7 @@ export default function Navbar() {
               src="/logo.png"
               alt="AL BURINY Logo"
             />
-            <span className="text-white text-[10px] sm:text-xl font-bold tracking-widest whitespace-nowrap">
+            <span className="text-orange-900 text-[10px] sm:text-xl font-bold tracking-widest whitespace-nowrap">
               AL BURINY
             </span>
           </div>
@@ -114,9 +114,9 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => handleNavClick(link.id)}
-                className="text-white font-semibold
+                className="text-orange-800 font-semibold
                            hover:-translate-y-0.5
-                           hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]
+                           hover:text-orange-900
                            transition-all duration-300"
               >
                 {link.text}
@@ -131,7 +131,7 @@ export default function Navbar() {
                        flex items-center justify-center"
             aria-label="Open menu"
           >
-            <MenuIcon className="size-6 text-white" />
+            <MenuIcon className="size-6 text-orange-800" />
           </button>
         </div>
       </motion.nav>
@@ -148,8 +148,8 @@ export default function Navbar() {
           <button
             key={link.id}
             onClick={() => handleNavClick(link.id)}
-            className="text-white text-xl font-semibold
-                       hover:text-yellow-300 transition"
+            className="text-orange-900 text-xl font-semibold
+                       hover:text-orange-600 transition"
           >
             {link.text}
           </button>
