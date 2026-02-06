@@ -38,44 +38,45 @@ const EmergencyLightingSystems = () => {
 
   const products = [
     {
-      title: "LED Emergency Exit Signs",
-      description: "High-visibility LED exit signs with energy-efficient technology, featuring long-lasting illumination, low power consumption, and clear directional indicators compliant with international safety codes.",
+      title: "System Encoder",
+      description: "Handheld encoder for programming emergency lighting systems with digital display and keypad control.",
       image: "/emergency1.png"
     },
     {
-      title: "Emergency Bulkhead Lights",
-      description: "Robust bulkhead lighting fixtures designed for corridors and escape routes, providing reliable illumination with impact-resistant housings and extended battery life for safe evacuation.",
+      title: "Emergency Bulkhead",
+      description: "Super bright LED bulkhead with 3-hour emergency duration, IP65 protection, universal AC input voltage.",
       image: "/emergency2.png"
     },
     {
-      title: "Self-Contained Emergency Units",
-      description: "Independent emergency lighting units with integrated battery backup systems, offering 3-hour minimum duration, automatic activation on power failure, and minimal maintenance requirements.",
+      title: "Emergency Exit Sign",
+      description: "CE approved LED exit sign with multiple liquid options, 3-hour emergency duration, maintained/non-maintained modes.",
       image: "/emergency3.png"
     },
     {
-      title: "Central Monitoring Systems",
-      description: "Sophisticated centralized emergency lighting control systems for large facilities, enabling real-time monitoring, automated testing, fault detection, and comprehensive reporting capabilities.",
-      image: "/emergency5.png"
-    },
-    {
-      title: "Maintained & Non-Maintained Lights",
-      description: "Versatile emergency lighting options including maintained lights that operate continuously and non-maintained units that activate only during power outages, suitable for various applications.",
-      image: "/emergency6.png"
-    },
-    {
-      title: "Weatherproof Emergency Lighting",
-      description: "IP65-rated outdoor emergency lighting solutions with corrosion-resistant materials, sealed enclosures, and weatherproof designs for parking areas, building exteriors, and exposed locations.",
+      title: "Emergency Down Light",
+      description: "TUV CE approved LED downlight with LiFePO4 battery, auto-test function, up to 4-year lifespan, overcharge protection.",
       image: "/emergency4.png"
     },
     {
-      title: "Automatic Self-Testing Systems",
-      description: "Intelligent emergency lighting with built-in self-testing functionality, performing automated function and duration tests while logging results and alerting maintenance teams to potential issues.",
-      image: "/emergency7.png"
+      title: "Emergency Down Light Round",
+      description: "Round downlight for monitoring systems with SMD 2835 LEDs, IP65 rated, 3-hour emergency time, maintained/non-maintained operation.",
+      image: "/emergency5.png"
     },
     {
-      title: "Customizable Exit Sign Designs",
-      description: "Tailored exit signage with multiple pictogram options, custom text capabilities, and various mounting configurations to meet specific building requirements and comply with local regulations.",
+      title: "Central Monitoring System Control Panel ",
+      description: "3.5-inch touch screen TFT display panel supporting up to 255 slave devices with 1000m communication distance.",
+      image: "/emergency6.png"
+    },
+    
+    {
+      title: "Emergency Light for Monitoring System",
+      description: "24pcs SMD 2835 LEDs with IP65 rating, maintained/non-maintained operation, surface mount with optional recessed kit.",
       image: "/emergency8.png"
+    },
+    {
+      title: "Exit Sign for Monitoring System",
+      description: "24pcs SMD 4014 LEDs with IP65 protection, maintained/non-maintained modes, ceiling/wall mounting options, UL & Dubai approved.",
+      image: "/emergency9.png"
     }
   ];
 
