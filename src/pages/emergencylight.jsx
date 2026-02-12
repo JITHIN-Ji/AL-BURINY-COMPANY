@@ -37,48 +37,56 @@ const EmergencyLightingSystems = () => {
   };
 
   const products = [
-    {
-      title: "System Encoder",
-      description: "Handheld encoder for programming emergency lighting systems with digital display and keypad control.",
-      image: "/emergency1.png"
-    },
-    {
-      title: "Emergency Bulkhead",
-      description: "Super bright LED bulkhead with 3-hour emergency duration, IP65 protection, universal AC input voltage.",
-      image: "/emergency2.png"
-    },
-    {
-      title: "Emergency Exit Sign",
-      description: "CE approved LED exit sign with multiple liquid options, 3-hour emergency duration, maintained/non-maintained modes.",
-      image: "/emergency3.png"
-    },
-    {
-      title: "Emergency Down Light",
-      description: "TUV CE approved LED downlight with LiFePO4 battery, auto-test function, up to 4-year lifespan, overcharge protection.",
-      image: "/emergency4.png"
-    },
-    {
-      title: "Emergency Down Light Round",
-      description: "Round downlight for monitoring systems with SMD 2835 LEDs, IP65 rated, 3-hour emergency time, maintained/non-maintained operation.",
-      image: "/emergency5.png"
-    },
-    {
-      title: "Central Monitoring System Control Panel ",
-      description: "3.5-inch touch screen TFT display panel supporting up to 255 slave devices with 1000m communication distance.",
-      image: "/emergency6.png"
-    },
-    
-    {
-      title: "Emergency Light for Monitoring System",
-      description: "24pcs SMD 2835 LEDs with IP65 rating, maintained/non-maintained operation, surface mount with optional recessed kit.",
-      image: "/emergency8.png"
-    },
-    {
-      title: "Exit Sign for Monitoring System",
-      description: "24pcs SMD 4014 LEDs with IP65 protection, maintained/non-maintained modes, ceiling/wall mounting options, UL & Dubai approved.",
-      image: "/emergency9.png"
-    }
-  ];
+  {
+    title: "System Encoder",
+    description: "Handheld encoder for programming emergency lighting systems with digital display and keypad control.",
+    image: "/emergency1.png"
+  },
+  {
+    title: " Exit Surface Mounted ",
+    description: "Super bright LED bulkhead with 3-hour emergency duration, IP65 protection, universal AC input voltage.",
+    image: "/emergency2.png"
+  },
+  {
+    title: "Emergency Exit Sign",
+    description: "CE approved LED exit sign with multiple liquid options, 3-hour emergency duration, maintained/non-maintained modes.",
+    image: "/emergency3.png"
+  },
+  {
+    title: "Emergency Down Light",
+    description: "TUV CE approved LED downlight with LiFePO4 battery, auto-test function, up to 4-year lifespan, overcharge protection.",
+    image: "/emergency4.png"
+  },
+  {
+    title: "Emergency Down Light Round",
+    description: "Round downlight for monitoring systems with SMD 2835 LEDs, IP65 rated, 3-hour emergency time, maintained/non-maintained operation.",
+    image: "/emergency5.png"
+  },
+  {
+    title: "Central Monitoring System Control Panel",
+    description: "3.5-inch touch screen TFT display panel supporting up to 255 slave devices with 1000m communication distance.",
+    image: "/emergency6.png"
+  },
+  {
+    title: "Emergency Light for Monitoring System",
+    description: "24pcs SMD 2835 LEDs with IP65 rating, maintained/non-maintained operation, surface mount with optional recessed kit.",
+    image: "/emergency8.png"
+  },
+
+  {
+    title: "Emergency Bulkhead (Conventional Type)",
+    description: "High-performance LED bulkhead designed for conventional emergency lighting systems, 3-hour backup duration, IP65 protection, maintained/non-maintained operation with easy wall or ceiling installation.",
+    image: "/emergency8.png"
+  },
+  {
+    title: "Exit Sign for Monitoring System",
+    description: "24pcs SMD 4014 LEDs with IP65 protection, maintained/non-maintained modes, ceiling/wall mounting options, UL & Dubai approved.",
+    image: "/emergency7.png"
+  }
+
+  
+  
+];
 
   return (
     <div style={{ minHeight: "100vh", background: "#f5f5f5" }}>

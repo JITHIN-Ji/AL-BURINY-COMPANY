@@ -76,15 +76,18 @@ const FireAlarmSystems = () => {
       image: "/firealarm6.png"
     },
     {
-      title: "Building Management Integration",
-      description: "Seamless integration capabilities with BMS platforms enabling centralized monitoring, automated HVAC control during fire events, and comprehensive facility management through unified interfaces.",
-      image: "/firealarm8.png"
-    },
-    {
-      title: "24/7 System Monitoring & Maintenance",
-      description: "Round-the-clock remote monitoring services with scheduled preventive maintenance, emergency response support, and comprehensive system health checks ensuring optimal performance and compliance.",
-      image: "/firealrm7.png"
-    }
+  title: "EN54 Addressable Detectors",
+  description: "DI-9105E Intelligent Reflective Beam Detector designed for large open areas such as warehouses, shopping malls, industrial buildings, and exhibition halls. Features built-in laser alignment, digital angle display for precise setup, long-range monitoring capability, automatic drift compensation, and strong resistance to light and dust interference. Microprocessor-based design ensures high sensitivity and stable performance.",
+  image: "/firealarm7.png"
+},
+
+{
+  title: "EN54 Addressable Repeaters",
+  description: "GST-NR2EC (CAN) / GST-NR2EF (Fiber) Intelligent Network Repeater for EN54 addressable fire alarm systems. Supports CAN and fiber communication for extending system networks. Includes LCD display, event logging (up to 10,000 records), programmable inputs and outputs, and reliable long-distance data transmission for large facilities and multi-building installations.",
+  image: "/firealarm8.png"
+}
+
+    
   ];
 
   return (
@@ -290,6 +293,45 @@ const FireAlarmSystems = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Diagram Section */}
+      <section style={{ padding: "3rem 1rem", background: "#fff" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <h2 style={{ 
+            fontSize: "clamp(1.5rem, 4vw, 2rem)", 
+            fontWeight: 700, 
+            marginBottom: "2rem",
+            color: "#ff6b00",
+            borderLeft: "4px solid #ff6b00",
+            paddingLeft: "1rem"
+          }}>
+            System Diagram
+          </h2>
+          
+          <div style={{
+            background: "#f9f9f9",
+            borderRadius: "12px",
+            padding: "2rem",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+            border: "2px solid #ff6b00"
+          }}>
+            <img 
+              src="/diagram.jpeg"
+              alt="Fire Alarm System Diagram"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "8px"
+              }}
+              onError={(e) => {
+                e.target.style.display = "none";
+                e.target.parentElement.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; padding: 4rem; color: #ff6b00; font-size: 1.2rem; text-align: center;">📊 Diagram will be displayed here</div>`;
+              }}
+            />
           </div>
         </div>
       </section>
