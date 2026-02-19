@@ -43,22 +43,22 @@ const EmergencyLightingSystems = () => {
     image: "/emergency1.png"
   },
   {
-    title: " Exit Surface Mounted ",
+    title: " Exit Surface Mounted (Conventional)",
     description: "Super bright LED bulkhead with 3-hour emergency duration, IP65 protection, universal AC input voltage.",
     image: "/emergency2.png"
   },
   {
-    title: "Emergency Exit Sign",
+    title: "Emergency Exit Sign (Conventional)",
     description: "CE approved LED exit sign with multiple liquid options, 3-hour emergency duration, maintained/non-maintained modes.",
     image: "/emergency3.png"
   },
   {
-    title: "Emergency Down Light",
+    title: "Emergency Down Light (Conventional Type)",
     description: "TUV CE approved LED downlight with LiFePO4 battery, auto-test function, up to 4-year lifespan, overcharge protection.",
     image: "/emergency4.png"
   },
   {
-    title: "Emergency Down Light Round",
+    title: "Emergency Down Light Round (Addressable)",
     description: "Round downlight for monitoring systems with SMD 2835 LEDs, IP65 rated, 3-hour emergency time, maintained/non-maintained operation.",
     image: "/emergency5.png"
   },
@@ -68,7 +68,7 @@ const EmergencyLightingSystems = () => {
     image: "/emergency6.png"
   },
   {
-    title: "Emergency Light for Monitoring System",
+    title: "Emergency Light for Monitoring System (Addressable)",
     description: "24pcs SMD 2835 LEDs with IP65 rating, maintained/non-maintained operation, surface mount with optional recessed kit.",
     image: "/emergency8.png"
   },
@@ -79,7 +79,7 @@ const EmergencyLightingSystems = () => {
     image: "/emergency8.png"
   },
   {
-    title: "Exit Sign for Monitoring System",
+    title: "Exit Sign for Monitoring System (Addressable)",
     description: "24pcs SMD 4014 LEDs with IP65 protection, maintained/non-maintained modes, ceiling/wall mounting options, UL & Dubai approved.",
     image: "/emergency7.png"
   }

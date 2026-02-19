@@ -27,7 +27,7 @@ const FireFightingEquipment = () => {
   const handleDownloadCatalogue = () => {
     // Create a temporary anchor element to trigger download
     const link = document.createElement('a');
-    const pdfFileName = "firefighting-systems.pdf";
+    const pdfFileName = "FIREX-PRODUCT-CATALOGUE.pdf";
     link.href = `/${pdfFileName}`;
     link.download = pdfFileName;
     link.target = '_blank';
@@ -129,7 +129,7 @@ const FireFightingEquipment = () => {
                     fontSize: "1rem",
                     fontWeight: 600
                   }}>
-                    FIREX-UK
+                    FIREX-UAE
                   </span>
                 </div>
               </div>
