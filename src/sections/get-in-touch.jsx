@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 export default function GetInTouch() {
   const [formData, setFormData] = useState({
@@ -28,11 +29,19 @@ export default function GetInTouch() {
     setStatus(null);
 
     try {
-      // Handle form submission logic here
-      console.log("Form submitted:", formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { error } = await supabase.from("inquiries").insert([
+        {
+          full_name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+        },
+      ]);
+
+      if (error) {
+        throw error;
+      }
 
       setStatus("success");
       setFormData({
@@ -43,7 +52,7 @@ export default function GetInTouch() {
         message: "",
       });
     } catch (err) {
-      console.error(err);
+      console.error("Supabase insert error:", err);
       setStatus("error");
     } finally {
       setLoading(false);

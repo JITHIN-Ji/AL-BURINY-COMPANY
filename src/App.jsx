@@ -13,6 +13,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import FireAlarmSystems from "./pages/firealarm";
 import EmergencyLightingSystems from "./pages/emergencylight";
 import FireFightingEquipment from "./pages/freefighting";
+import AdminLogin from "./pages/admin-login";
+import AdminDashboard from "./pages/admin-dashboard";
+
 
 export default function Page() {
   return (
@@ -36,6 +39,8 @@ export default function Page() {
         <Route path="/fire-alarm-systems" element={<FireAlarmSystems />} />
         <Route path="/emergency-lighting-systems" element={<EmergencyLightingSystems />} />
         <Route path="/fire-fighting-equipment" element={<FireFightingEquipment />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
       <Footer />
     </>
